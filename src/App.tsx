@@ -2,9 +2,13 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import { NavLink } from "react-router";
+import { API } from "./api/axios";
 
 function App() {
   const [count, setCount] = useState(0);
+  API.get("/")
+    .then((res) => console.log(res.data))
+    .catch((e) => console.error(e));
 
   return (
     <>
